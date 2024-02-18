@@ -2,6 +2,8 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: '/capsuleT20/',
+  ignoreDeadLinks: true,
   title: "Promo T20",
   description: "Pour ne jamais oublier",
   themeConfig: {
