@@ -1,5 +1,5 @@
 export default {
-    base: '/capsule_t20/',
+    base: '/capsule_temporelle/',
     ignoreDeadLinks: true,
     title: "Promo T20",
     description: "Pour ne jamais oublier",
