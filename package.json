@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "leaflet": "^1.9.4",
-    "leaflet-basemaps": "^0.3.4"
+    "leaflet-basemaps": "^0.3.4",
+    "vue": "^3.4.19",
+    "vuejs": "^3.0.1"
   }
 }
