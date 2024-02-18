@@ -1,0 +1,53 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+    <!-- Add dependencies: Leaflet, leaflet-basemap, leaflet-providers-->
+    <link rel="stylesheet" href="leaflet/dist/leaflet.css" />
+    <script src="leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="leaflet-basemaps/L.Control.Basemaps.css" />
+    <script src="leaflet-basemaps/L.Control.Basemaps-min.js"></script>
+  </head>
+  <body>
+    
+    <!-- DEFINE THE MAP -->
+		<div id="map" style="position: absolute; top: 0; left:0; bottom:0; right: 0;"></div>
+    
+    <!-- Feed the map content -->
+    <script type="text/javascript">
+
+      // MAP
+      var map = L.map('map', {
+        center: [43.5348484, 1.4948745], // center on Toulouse
+        zoom: 22,
+      });
+       
+      // BASEMAPS //
+        // Basemaps definition
+      var basemaps = [
+        L.tileLayer('https://data.geopf.fr/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=HR.ORTHOIMAGERY.ORTHOPHOTOS&STYLE=normal&FORMAT=image/jpeg&TILEMATRIXSET=PM&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}', {
+          attribution: '<a href="https://www.geoportail.gouv.fr/" title="Orthophotos IGN" target="_blank">&copy; <b>Orthophotos</b></a> &copy; <a href="https://www.geoportail.gouv.fr/">IGN</a>',
+          tileSize : 256,
+          maxzoom: 24,
+        }),
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 24,
+          attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+      })];
+    
+        // Add basemaps to the map
+      map.addControl(L.control.basemaps({
+      position: 'bottomright',
+      basemaps: basemaps,
+      tileX: 66,  // tile X coordinate
+      tileY: 46,  // tile Y coordinate
+      tileZ: 7   // tile zoom  
+      }));
+     
+      coord_capsule = [43.5348484, 1.4948745]
+      var marker = L.marker(coord_capsule).addTo(map);
+      marker.bindPopup("<b>La capsule est ici !</b><br>"+ coord_capsule).openPopup();
+
+      </script>
+  </body>
+</html>
+    

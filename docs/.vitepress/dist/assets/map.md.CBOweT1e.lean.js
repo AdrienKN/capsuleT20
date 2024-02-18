@@ -1,0 +1,1 @@
+import{_ as e,c as a,o,V as t}from"./chunks/framework.CKFPq4mw.js";const m=JSON.parse('{"title":"Position de la capsule","description":"","frontmatter":{},"headers":[],"relativePath":"map.md","filePath":"map.md"}'),s={name:"map.md"},n=t("",4),r=[n];function c(i,l,d,p,_,u){return o(),a("div",null,r)}const f=e(s,[["render",c]]);export{m as __pageData,f as default};
